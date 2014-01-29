@@ -14,9 +14,10 @@ gem 'thin'
 gem 'activesupport'
 gem 'activerecord'
 
-gem 'rake'
-
-gem 'shotgun'
+group :development do
+  gem 'rake'
+  gem 'shotgun'
+end
 
 group :test do
   gem 'faker'
