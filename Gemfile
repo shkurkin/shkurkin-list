@@ -21,6 +21,5 @@ group :development do
 end
 
 group :test do
-  gem 'faker'
   gem 'rspec'
 end
