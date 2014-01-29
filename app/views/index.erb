@@ -1,0 +1,58 @@
+<div class="container">
+  <h1 class="center">EliDavidRossetShkurkinTheFirst List!</h1>
+  <h3 class="center">Categories</h3>
+  <ul id="cat_list">
+    <% @categories.each do |category| %>
+      <li class="cat">
+        <a href="/categories/<%= category.name %>"><%= category.name %></a>
+      </li>
+    <% end %>
+  </ul>
+  <fieldset>
+    <legend>Add a Category</legend>
+    <form name="new_category" action="category/new" method="post">
+      <table>
+        <tr>
+          <td><label for="name">Name: </label></td>
+          <td><input type="text" name="name"/></td>
+          <td><input type="submit" value="Submit" /></td>
+        <tr/>
+      </table>
+    </form>
+  </fieldset>
+  <br>
+  <fieldset>
+    <legend>Add a Post</legend>
+    <form name="new_post" action="post/new" method="post">
+      <table>
+        <tr>
+          <td><label for="category">Category: </label></td>
+          <td>
+              <select name="category">
+                <% Category.all.each do |cat| %>
+                  <option value="<%= cat.name %>"><%= cat.name %></option>
+                <% end %>
+              </select>
+          </td>
+        </tr>
+        <tr>
+          <td><label for="title">Title: </label></td>
+          <td><input type="text" name="title" /></td>
+        </tr>
+        <tr>
+          <td><label for="description">Description: </label></td>
+          <td><textarea rows="4" cols="45" name="description" />
+            </textarea></td>
+        </tr>
+        <tr>
+          <td><label for="price">Price: </label></td>
+          <td><input type="text" name="price"></td>
+        </tr>
+        <tr>
+          <td><input type="submit" value="Submit" /></td>
+        </tr>
+      </table>
+    </form>
+  </fieldset>
+  <h5 class="center"><a href="/map">Map View</a></h5>
+</div>
